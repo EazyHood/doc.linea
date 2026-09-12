@@ -1,0 +1,47 @@
+---
+title: Chain.Love
+description: Compare Linea RPC, API, and infrastructure providers side by side in one open dataset.
+---
+
+[Chain.Love](https://mainnet.linea.chain.love/) is an open infrastructure directory with a
+deployment dedicated to Linea.
+It indexes the services that support the network across categories including RPC and API
+providers, MCP servers, SDKs, explorers, bridges, oracles, and faucets.
+Each entry records plan type, access and per-query pricing, request limits, and regions, so
+providers can be compared in one table rather than one pricing page at a time.
+
+- [Linea deployment](https://mainnet.linea.chain.love/)
+- [Documentation](https://app.chain.love/docs)
+- [Dataset](https://github.com/Chain-Love/chain-love)
+
+## Browse by category
+
+Each category has a page filtered to the services that support Linea:
+
+- [APIs and RPC providers](https://mainnet.linea.chain.love/toolbox/apis)
+- [Explorers](https://mainnet.linea.chain.love/toolbox/explorers)
+- [Bridges](https://mainnet.linea.chain.love/toolbox/bridges)
+- [Faucets](https://mainnet.linea.chain.love/toolbox/faucets)
+- [MCP servers](https://mainnet.linea.chain.love/toolbox/mcpservers)
+
+## Query the directory
+
+The discovery endpoints are public, and require no API key and no account:
+
+```bash
+# Category keys, with the number of Linea entries in each
+curl -sS "https://mainnet.linea.chain.love/api/infrastructure-providers/categories"
+
+# First page of Linea RPC and API plans
+curl -sS "https://mainnet.linea.chain.love/api/infrastructure-providers/rows?category=apis"
+```
+
+Each row carries the plan type, pricing, request limits, and regions for one provider plan,
+so an application or an agent can select infrastructure at runtime.
+Pass `page` and `pageSize` to page through a category.
+
+## Use cases
+
+- Compare Linea RPC plans on price, request limits, and regions before signing up for one.
+- Find the explorers, bridges, and faucets that cover Linea without leaving the directory.
+- Check which providers still serve Linea when an existing vendor changes its plans.
